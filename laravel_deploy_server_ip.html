@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>deploye laravel </title>
+</head>
+<body>
+    <h5>public folder .htaccess rename .htaccess_old</h5>
+    <h5>changes in .htaccess and put outside public folder</h5>
+    <p>RewriteEngine On
+        RewriteCond %{REQUEST_FILENAME} !-d
+        RewriteRule ^(.*)/$ /$1 [L,R=301]
+        RewriteCond %{REQUEST_URI} !(\.css|\.js|\.png|\.jpg|\.gif|robots\.txt)$ [NC]
+        RewriteCond %{REQUEST_FILENAME} !-d
+        RewriteCond %{REQUEST_FILENAME} !-f
+        RewriteRule ^ index.php [L]
+        RewriteCond %{REQUEST_FILENAME} !-d
+        RewriteCond %{REQUEST_FILENAME} !-f
+        RewriteCond %{REQUEST_URI} !^/public/
+        RewriteRule ^(css|js|images)/(.*)$ public/$1/$2 [L,NC]</p>
+    <h5>rename server.php to index.php</h5>
+    
+</body>
+</html>
